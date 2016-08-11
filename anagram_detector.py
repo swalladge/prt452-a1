@@ -37,10 +37,13 @@ def find_anagrams(words):
 def format_anagrams(anagrams):
     # takes the grouped word list of lists and returns a list of strings,
     # line by line.
+    formatted = []
 
-    # TODO
+    for l in anagrams:
+        formatted.append('{}: {}'.format(
+            len(l), ', '.join(l)))
 
-    return []
+    return formatted
 
 
 if __name__ == '__main__':

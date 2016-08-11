@@ -94,14 +94,14 @@ class FormatAnagramsTest(unittest.TestCase):
     def test_one_word(self):
         """ test with a single word """
         anagrams = [['hello']]
-        formatted = anagram_detector.find_anagrams(anagrams)
+        formatted = anagram_detector.format_anagrams(anagrams)
         expected = ['1: hello']
         self.assertEqual(formatted, expected)
 
     def test_single_anagram_group(self):
         """ test with a list where all are anagrams of the same word """
         anagrams = [['abcd','bacd','acdb','dabc']]
-        formatted = anagram_detector.find_anagrams(anagrams)
+        formatted = anagram_detector.format_anagrams(anagrams)
         expected = ['4: abcd, bacd, acdb, dabc']
         self.assertEqual(formatted, expected)
 
@@ -110,7 +110,7 @@ class FormatAnagramsTest(unittest.TestCase):
             (duplicates should be ignored)
         """
         anagrams = [['hello'],['world']]
-        formatted = anagram_detector.find_anagrams(anagrams)
+        formatted = anagram_detector.format_anagrams(anagrams)
         expected = ['1: hello','1: world']
         self.assertEqual(formatted, expected)
 
@@ -119,7 +119,7 @@ class FormatAnagramsTest(unittest.TestCase):
             (inner spaces should count as letters)
         """
         anagrams = [['hi there','here hit'],['eerthih']]
-        formatted = anagram_detector.find_anagrams(anagrams)
+        formatted = anagram_detector.format_anagrams(anagrams)
         expected = ['2: hi there, here hit','1: eerthih']
         self.assertEqual(formatted, expected)
 
