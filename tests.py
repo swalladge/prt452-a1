@@ -74,6 +74,54 @@ class FindAnagramsTest(unittest.TestCase):
         self.assertEqual(anagrams, expected)
 
 
+class FormatAnagramsTest(unittest.TestCase):
+    """ tests to make sure the anagrams list gets formatted properly for printing"""
+
+    def test_example_words(self):
+        """ test finding anagrams based on the example """
+        anagrams = [['paw','wap','awp'],['how','who'],['here']]
+        formatted = anagram_detector.format_anagrams(anagrams)
+        expected = [ '3: paw, wap, awp', '2: how, who', '1: here']
+        self.assertEqual(formatted, expected)
+
+    def test_no_words(self):
+        """ test with empty words list """
+        anagrams = []
+        formatted = anagram_detector.format_anagrams(anagrams)
+        expected = []
+        self.assertEqual(formatted, expected)
+
+    def test_one_word(self):
+        """ test with a single word """
+        anagrams = [['hello']]
+        formatted = anagram_detector.find_anagrams(anagrams)
+        expected = ['1: hello']
+        self.assertEqual(formatted, expected)
+
+    def test_single_anagram_group(self):
+        """ test with a list where all are anagrams of the same word """
+        anagrams = [['abcd','bacd','acdb','dabc']]
+        formatted = anagram_detector.find_anagrams(anagrams)
+        expected = ['4: abcd, bacd, acdb, dabc']
+        self.assertEqual(formatted, expected)
+
+    def test_duplicate_words(self):
+        """ test with a list containing duplicate words
+            (duplicates should be ignored)
+        """
+        anagrams = [['hello'],['world']]
+        formatted = anagram_detector.find_anagrams(anagrams)
+        expected = ['1: hello','1: world']
+        self.assertEqual(formatted, expected)
+
+    def test_phrases(self):
+        """ test with a list containing phrases
+            (inner spaces should count as letters)
+        """
+        anagrams = [['hi there','here hit'],['eerthih']]
+        formatted = anagram_detector.find_anagrams(anagrams)
+        expected = ['2: hi there, here hit','1: eerthih']
+        self.assertEqual(formatted, expected)
 
 
 if __name__ == '__main__':
