@@ -23,6 +23,18 @@ class LoadWordsTest(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             anagram_detector.load_words('tests/file_does_not_exist')
 
+    def test_empty_file(self):
+        """ make sure loading from an empty file doesn't return any words """
+        words = anagram_detector.load_words('tests/words_empty.txt')
+        self.assertEqual(words, [])
+
+    def test_uppercase(self):
+        """ test with a list containing uppercase letters in words
+            (case should be ignored, and everything converted to lowercase)
+        """
+        formatted = anagram_detector.load_words('tests/words_uppercase.txt')
+        expected = ['word', 'ordw']
+        self.assertEqual(formatted, expected)
 
 class FindAnagramsTest(unittest.TestCase):
     """ tests to make sure it finds all the anagrams correctly """
@@ -73,6 +85,15 @@ class FindAnagramsTest(unittest.TestCase):
         expected = [['hi there','here hit'],['eerthih']]
         self.assertEqual(anagrams, expected)
 
+    def test_uppercase(self):
+        """ test with a list containing uppercase letters in words
+            (case should be ignored, and everything converted to lowercase)
+        """
+        words = ['Word', 'word', 'ordw']
+        formatted = anagram_detector.find_anagrams(words)
+        expected = [['word', 'ordw']]
+        self.assertEqual(formatted, expected)
+
 
 class FormatAnagramsTest(unittest.TestCase):
     """ tests to make sure the anagrams list gets formatted properly for printing"""
@@ -122,6 +143,19 @@ class FormatAnagramsTest(unittest.TestCase):
         formatted = anagram_detector.format_anagrams(anagrams)
         expected = ['2: hi there, here hit','1: eerthih']
         self.assertEqual(formatted, expected)
+
+
+class AllTogetherTest(unittest.TestCase):
+    """ tests to bring everything together - to show the three functions working together """
+
+    def test_example_words(self):
+        """ test anagrams based on the example """
+        words = anagram_detector.load_words('tests/words_example.txt')
+        anagrams = anagram_detector.find_anagrams(words)
+        formatted = anagram_detector.format_anagrams(anagrams)
+        expected = ['3: paw, wap, awp', '2: how, who', '1: here']
+        self.assertEqual(formatted, expected)
+
 
 
 if __name__ == '__main__':
