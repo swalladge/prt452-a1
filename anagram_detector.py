@@ -1,3 +1,4 @@
+from collections import OrderedDict
 
 def load_words(words_file):
     # load a list of words from a file into a list of words
@@ -10,11 +11,28 @@ def load_words(words_file):
     return words
 
 def find_anagrams(words):
-    # process the word list and return a list of lists (grouped by similar
-    # words)
-    # TODO
+    # process the word list and return a list of lists (grouped by
+    # anagrams)
 
-    return []
+    anagram_dict = OrderedDict()
+    anagrams = []
+
+    # iterate through the words, using a normalized version of the word as
+    # a key in the dictionary to detect anagrams and build lists
+    for w in words:
+        k = ''.join(sorted(w.lower()))
+        if k not in anagram_dict:
+            anagram_dict[k] = [w]
+        else:
+            if w not in anagram_dict[k]:
+                anagram_dict[k].append(w) 
+
+    # transform the anagram dictionary to a list of lists of anagrams,
+    # sorted by number of anagrams
+    for k in sorted(anagram_dict, key=lambda x:-len(anagram_dict[x])):
+        anagrams.append(anagram_dict[k])
+
+    return anagrams
 
 def format_anagrams(anagrams):
     # takes the grouped word list of lists and returns a list of strings,

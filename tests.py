@@ -45,7 +45,7 @@ class FindAnagramsTest(unittest.TestCase):
         """ test with a single word """
         words = ['hello']
         anagrams = anagram_detector.find_anagrams(words)
-        expected = ['hello']
+        expected = [['hello']]
         self.assertEqual(anagrams, expected)
 
     def test_single_anagram_group(self):
@@ -70,7 +70,7 @@ class FindAnagramsTest(unittest.TestCase):
         """
         words = ['hi there','here hit','eerthih']
         anagrams = anagram_detector.find_anagrams(words)
-        words = [['hi there','here hit'],['eerthih']]
+        expected = [['hi there','here hit'],['eerthih']]
         self.assertEqual(anagrams, expected)
 
 
