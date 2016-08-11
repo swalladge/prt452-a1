@@ -19,8 +19,9 @@ This git repo will contain everything for Assignment 1, including:
 - .gitignore - file listing files/directories that git should ignore
 - questions.md - the questions copied from the original assignment document for reference
 - tests.py - unittests to run, used for TDD
-- similar_words.py - the program for question 2
+- anagram_detector.py - the program for question 2
 - .travis.yml - [Travis CI](https://travis-ci.org) config file
+- tests/ directory - contains various files used for testing
 
 
 ## Notes
@@ -35,11 +36,10 @@ This git repo will contain everything for Assignment 1, including:
 
 Tests Status:  [![Build Status](https://travis-ci.org/swalladge/prt452-a1.svg?branch=master)](https://travis-ci.org/swalladge/prt452-a1)
 
-The program is run as follows (with `file.txt` the name of a file with a list of words to process, or `-` to read from
-standard input):
+The program is run as follows (with `file.txt` the name of a file with a list of words to process):
 
 ```
-$ python similar_words.py <file.txt>
+$ python anagram_detector.py <file.txt>
 ```
 
 To run the tests:
