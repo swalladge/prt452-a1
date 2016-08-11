@@ -20,6 +20,8 @@ This git repo will contain everything for Assignment 1, including:
 - questions.md - the questions copied from the original assignment document for reference
 - tests.py - unittests to run, used for TDD
 - similar_words.py - the program for question 2
+- .travis.yml - [Travis CI](https://travis-ci.org) config file
+
 
 ## Notes
 
@@ -29,6 +31,9 @@ This git repo will contain everything for Assignment 1, including:
 ## Question 2 information
 
 - the program is written in python, using the included unit testing framework
+- Travis CI is used for running the tests on every push. 
+
+Tests Status:  [![Build Status](https://travis-ci.org/swalladge/prt452-a1.svg?branch=master)](https://travis-ci.org/swalladge/prt452-a1)
 
 The program is run as follows (with `file.txt` the name of a file with a list of words to process, or `-` to read from
 standard input):
