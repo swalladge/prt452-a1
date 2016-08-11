@@ -2,9 +2,12 @@
 def load_words(words_file):
     # load a list of words from a file into a list of words
 
-    # TODO
+    words = []
+    with open(words_file) as f:
+        for line in f:
+            words.append(line.strip())
 
-    return []
+    return words
 
 def find_anagrams(words):
     # process the word list and return a list of lists (grouped by similar
