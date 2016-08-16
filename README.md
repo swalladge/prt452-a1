@@ -9,7 +9,7 @@ This git repo will contain everything for Assignment 1, including:
 
 - [x] the program for Q2
 - [x] tests for Q2's program
-- [ ] document presenting the TDD process used for Q2
+- [x] document presenting the TDD process used for Q2
 - [ ] document answering Q3
 - [x] a copy of the questions themselves
 
@@ -23,6 +23,8 @@ This git repo will contain everything for Assignment 1, including:
 - .travis.yml - [Travis CI](https://travis-ci.org) config file
 - tests/ directory - contains various files used for testing
 - Q2.md - contains details about the code and TDD process used in question 2.
+- Q3.md - contains discussion answering question 3.
+:wqa
 
 
 ## Notes
