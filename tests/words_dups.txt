@@ -1,0 +1,7 @@
+word
+ordw
+ordw
+Word
+ordw
+word
+ordw

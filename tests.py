@@ -24,7 +24,9 @@ class LoadWordsTest(unittest.TestCase):
             anagram_detector.load_words('tests/file_does_not_exist')
 
     def test_empty_file(self):
-        """ make sure loading from an empty file doesn't return any words """
+        """ make sure loading from an empty file (no lines with words) doesn't
+            return any words
+        """
         words = anagram_detector.load_words('tests/words_empty.txt')
         self.assertEqual(words, [])
 
@@ -35,6 +37,15 @@ class LoadWordsTest(unittest.TestCase):
         formatted = anagram_detector.load_words('tests/words_uppercase.txt')
         expected = ['word', 'ordw']
         self.assertEqual(formatted, expected)
+
+    def test_duplicates(self):
+        """ test with a list containing duplicate words (including an uppercase)
+            (duplicate words should be ignored - only counted once)
+        """
+        formatted = anagram_detector.load_words('tests/words_dups.txt')
+        expected = ['word', 'ordw']
+        self.assertEqual(formatted, expected)
+
 
 class FindAnagramsTest(unittest.TestCase):
     """ tests to make sure it finds all the anagrams correctly """

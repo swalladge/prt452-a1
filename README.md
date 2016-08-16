@@ -7,11 +7,11 @@ Copyright © 2016 Samuel Walladge
 
 This git repo will contain everything for Assignment 1, including:
 
-- [] the program for Q2
-- [] tests for Q2's program
+- [x] the program for Q2
+- [x] tests for Q2's program
 - [] document presenting the TDD process used for Q2
 - [] document answering Q3
-- [] a copy of the questions themselves
+- [x] a copy of the questions themselves
 
 ## Explanation of files
 

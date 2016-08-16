@@ -43,6 +43,9 @@ def format_anagrams(anagrams):
     # note: expects a list as outputted by find_anagrams()
     formatted = []
 
+    # make sure the anagrams list is sorted by number of anagrams in the group
+    anagrams.sort(key=lambda x:len(x), reverse=True)
+
     for l in anagrams:
         formatted.append('{}: {}'.format(
             len(l), ', '.join(l)))
