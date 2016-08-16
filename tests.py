@@ -137,15 +137,6 @@ class FormatAnagramsTest(unittest.TestCase):
         expected = ['4: abcd, bacd, acdb, dabc']
         self.assertEqual(formatted, expected)
 
-    def test_duplicate_words(self):
-        """ test with a list containing duplicate words
-            (duplicates should be ignored)
-        """
-        anagrams = [['hello'],['world']]
-        formatted = anagram_detector.format_anagrams(anagrams)
-        expected = ['1: hello','1: world']
-        self.assertEqual(formatted, expected)
-
     def test_phrases(self):
         """ test with a list containing phrases
             (inner spaces should count as letters)

@@ -22,33 +22,10 @@ This git repo will contain everything for Assignment 1, including:
 - anagram_detector.py - the program for question 2
 - .travis.yml - [Travis CI](https://travis-ci.org) config file
 - tests/ directory - contains various files used for testing
+- Q2.md - contains details about the code and TDD process used in question 2.
 
 
 ## Notes
 
 - all documents are written as plain text files using markdown markup.
-
-
-## Question 2 information
-
-- the program is written in python, using the included unit testing framework
-- Travis CI is used for running the tests on every push. 
-
-Tests Status:  [![Build Status](https://travis-ci.org/swalladge/prt452-a1.svg?branch=master)](https://travis-ci.org/swalladge/prt452-a1)
-
-The program is run as follows (with `file.txt` the name of a file with a list of words to process):
-
-```
-$ python anagram_detector.py <file.txt>
-```
-
-To run the tests:
-
-```
-$ python tests.py
-```
-
-## Question 3 information
-
-TODO
 
