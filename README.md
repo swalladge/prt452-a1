@@ -24,7 +24,6 @@ This git repo will contain everything for Assignment 1, including:
 - tests/ directory - contains various files used for testing
 - Q2.md - contains details about the code and TDD process used in question 2.
 - Q3.md - contains discussion answering question 3.
-:wqa
 
 
 ## Notes
