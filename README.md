@@ -10,7 +10,7 @@ This git repo will contain everything for Assignment 1, including:
 - [x] the program for Q2
 - [x] tests for Q2's program
 - [x] document presenting the TDD process used for Q2
-- [ ] document answering Q3
+- [x] document answering Q3
 - [x] a copy of the questions themselves
 
 ## Explanation of files
